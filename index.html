@@ -1,77 +1,46 @@
-<head>
-  <script src="dist/bundle.js"></script>
+<!DOCTYPE html>
+<html>
 
-  <a-scene>
-    <!-- right wall-->
-    <a-plane
-      position="4 2 0"
-      rotation="0 -90 0"
-      width="8"
-      height="4"
-      color="#7BC8A4"
-    ></a-plane>
-    <!-- left wall-->
-    <a-plane
-      position="-4 2 0"
-      rotation="0 90 0"
-      width="8"
-      height="4"
-      color="#7BC8A4"
-    ></a-plane>
-    <!-- front wall-->
-    <a-plane
-      position="0 2 -4"
-      rotation="0 0 0"
-      width="8"
-      height="4"
-      color="#7BC8A4"
-    ></a-plane>
-    <!-- back wall-->
-    <a-plane
-      position="0 2 4"
-      rotation="0 180 0"
-      width="8"
-      height="4"
-      color="#7BC8A4"
-    ></a-plane>
-    <!-- ceiling -->
-    <a-plane
-      position="0 4 0"
-      rotation="90 0 0"
-      width="8"
-      height="8"
-      color="blue"
-    ></a-plane>
-    <!-- floor -->
-    <a-plane
-      position="0 0 0"
-      rotation="-90 0 0"
-      width="8"
-      height="8"
-      color="gray"
-    ></a-plane>
-    <!-- adding a box with art-->
-    <!-- <a-box position="-2 2 -4" scale="0.92 0.74 0.1" src="#starry"></a-box>
-    <a-box position="0 2 -4" scale="0.73 0.91 0.1" src="#scream"></a-box>
-    <a-box position="2 2 -4" scale="0.53 0.77 0.1" src="#mona"></a-box> -->
-    <!--2nd wall -->
-    <!-- <a-box
-      position="-4 2 0"
-      scale="4 2 0.1"
-      rotation="0 90 0"
-      src="#picasso"
-    ></a-box> -->
-    <!--3rd wall -->
-    <a-box
-      painting-1
-      id="painting-1"
-      position="4 2 0"
-      scale="2.76 2.22 0.1"
-      rotation="0 -90 0"
-      src=""
-    ></a-box>
-    <!--  3D model!!-->
+<body>
 
-    <a-sky color="#ECECEC"></a-sky>
-  </a-scene>
-</head>
+  <head>
+    <script src="dist/bundle.js"></script>
+
+    <a-scene>
+      <!-- right wall-->
+      <a-plane position="8 3 0" rotation="0 -90 0" width="16" height="6" src="./assets/brick.jpg"></a-plane>
+      <!-- left wall-->
+      <a-plane position="-8 3 0" rotation="0 90 0" width="16" height="6" src="./assets/brick.jpg"></a-plane>
+      <!-- front wall-->
+      <a-plane position="0 3 -8" rotation="0 0 0" width="16" height="6" src="./assets/brick.jpg"></a-plane>
+      <!-- back wall-->
+      <a-plane position="0 3 8" rotation="0 180 0" width="16" height="6" src="./assets/brick.jpg"></a-plane>
+      <!-- ceiling -->
+      <!-- <a-plane position="0 4 0" rotation="90 0 0" width="8" height="8" color="#ebece2"></a-plane> -->
+      <!-- floor -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="16" height="16" src="./assets/concrete.jpg"></a-plane>
+
+      <!-- benches -->
+      <a-box id="bench-1" position="0 0 -3" rotation="90 0 0" scale="3 0.5 1" src="./assets/wood.jpg"></a-box>
+      <a-box id="bench-2" position="-3 0 0" rotation="0 90 0" scale="3 1 0.5" src="./assets/wood.jpg"></a-box>
+      <a-box id="bench-3" position="3 0 0" rotation="0 0 90" scale="1 0.5 3" src="./assets/wood.jpg"></a-box>
+      <a-box id="bench-4" position="0 0 3" rotation="0 0 0" scale="3 1 0.5" src="./assets/wood.jpg"></a-box>
+      <!-- 1st wall -->
+      <a-box painting-1 id="painting-1" position="-3 3 -8" scale="3 2 0.2" src="./assets/loading.jpg"></a-box>
+      <a-box painting-2 id="painting-2" position="0 3 -8" scale="2 3 0.1" src="./assets/loading.jpg"></a-box>
+      <a-box painting-3 id="painting-3" position="3 3 -8" scale="2 2 0.1" src="./assets/loading.jpg"></a-box>
+      <!--2nd wall -->
+      <a-box painting-4 id="painting-4" position="-8 3 0" scale="3 3 0.1" rotation="0 90 0" src="./assets/loading.jpg">
+      </a-box>
+      <!--3rd wall -->
+      <a-box painting-5 id="painting-5" position="8 3 0" scale="3 4 0.1" rotation="0 -90 0" src="./assets/loading.jpg">
+      </a-box>
+      <!--4th wall -->
+      <a-box painting-6 id="painting-6" position="0 3 8" scale="0.1 4 4" rotation="0 90 0" src="./assets/loading.jpg">
+      </a-box>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </head>
+</body>
+
+</html>

@@ -1,26 +1,21 @@
 import "aframe";
-import "puppeteer";
+const axios = require("axios");
 
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.goto("https://www.shutterstock.com/search/mystery");
-  await page.waitForSelector(".page_inner");
-  await page.$$eval("img", (images) => {
-    images = images.filter((image) => image.src);
-    console.log(images);
-  });
-  await browser.close();
-})();
+const NUM_PAINTINGS = 6;
 
-AFRAME.registerComponent("painting-1", {
-  init: function () {
-    console.log("Hi sara!");
+for (let i = 0; i < NUM_PAINTINGS; i++) {
+  AFRAME.registerComponent(`painting-${i}`, {});
+}
 
-    this.a_image = document.querySelector("#painting-1");
-    this.a_image.setAttribute(
-      "src",
-      "https://image.shutterstock.com/image-photo/girl-black-hat-holds-her-260nw-1910132041.jpg"
-    );
-  },
-});
+async function load_images() {
+  console.log("Calling api");
+  const response = await axios.get("http://localhost:8000/photo");
+  const urls = response.data.urls;
+
+  for (let i = 0; i < NUM_PAINTINGS; i++) {
+    const painting = document.querySelector(`#painting-${i + 1}`);
+    painting.setAttribute("src", urls[i]);
+  }
+}
+
+load_images();
