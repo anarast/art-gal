@@ -1,3 +1,5 @@
+require("file-loader?name=[name].[ext]!../index.html");
+
 import "aframe";
 const axios = require("axios");
 
