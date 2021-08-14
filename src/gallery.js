@@ -3,12 +3,11 @@ const axios = require("axios");
 
 const NUM_PAINTINGS = 6;
 
-for (let i = 0; i < NUM_PAINTINGS; i++) {
+for (let i = 1; i <= NUM_PAINTINGS; i++) {
   AFRAME.registerComponent(`painting-${i}`, {});
 }
 
 async function load_images() {
-  console.log("Calling api");
   const response = await axios.get("https://artapi.saratan.me/photos");
   const urls = response.data.urls;
 
@@ -18,22 +17,9 @@ async function load_images() {
 
     // Parse URLs to get image description
     const parsedUrl = urls[i].split("://").pop();
-    console.log(parsedUrl);
     const splitUrl = parsedUrl.split("/")[2];
-    console.log(splitUrl);
-    const splitDescription = splitUrl.split("-");
-    console.log(splitDescription);
-    const description =
-      splitDescription[0] +
-      " " +
-      splitDescription[1] +
-      " " +
-      splitDescription[2] +
-      " " +
-      splitDescription[3] +
-      " " +
-      splitDescription[4];
-    console.log(description);
+    const wordArray = splitUrl.split("-");
+    const description = `${wordArray[0]} ${wordArray[1]} ${wordArray[2]} ${wordArray[3]} ${wordArray[4]}`;
 
     const descriptionElement = document.querySelector(`#description-${i + 1}`);
     descriptionElement.setAttribute("value", description);
