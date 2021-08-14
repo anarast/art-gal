@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "start": "webpack --mode production && http-server"
   },
-  "author": "saratan@mac.com",
+  "author": "Sara Tan <saratan@mac.com>",
   "license": "ISC",
   "dependencies": {
     "aframe": "^1.2.0",
