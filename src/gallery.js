@@ -9,7 +9,7 @@ for (let i = 0; i < NUM_PAINTINGS; i++) {
 
 async function load_images() {
   console.log("Calling api");
-  const response = await axios.get("http://localhost:8000/photos");
+  const response = await axios.get("https://artapi.saratan.me/photos");
   const urls = response.data.urls;
 
   for (let i = 0; i < NUM_PAINTINGS; i++) {
