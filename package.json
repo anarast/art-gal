@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack --mode production && http-server"
+    "start": "webpack --mode production"
   },
   "author": "Sara Tan <saratan@mac.com>",
   "license": "ISC",
@@ -16,7 +16,6 @@
     "axios": "^0.21.1"
   },
   "devDependencies": {
-    "file-loader": "^6.2.0",
     "webpack": "^5.49.0",
     "webpack-cli": "^4.7.2"
   }

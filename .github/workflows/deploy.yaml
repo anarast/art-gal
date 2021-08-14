@@ -18,10 +18,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Remove node_modules
+        run: rm -rf node_modules
+
       - name: Deploy
         uses: reggionick/s3-deploy@v3
         with:
-          folder: dist
+          folder: .
           bucket: ${{ secrets.S3_BUCKET }}
           bucket-region: ${{ secrets.S3_BUCKET_REGION }}
           dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
